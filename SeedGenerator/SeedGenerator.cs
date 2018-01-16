@@ -16,14 +16,14 @@ namespace SeedGenerator
         {
             InitializeComponent();
             ddIle.SelectedIndex = 0;
-            dodajKarty();
+            DodajKarty();
             panel1.Visible = false;
             MessageBox.Show("INSTRUKCJA" + nl + nl + "1. Przygotuj talię 52 kart." + nl + "2. Potasuj ją metodą 'riffle shiffle' co najmniej 7 razy"
                 + nl + "3. Wybierz długość mnemonica jaki chcesz uzyskać" + nl + "4. Klikaj kolejne wylosowane karty zgodnie z poleceniami" + nl
               + "5. Potasuj talię ponownie i wylosuj/klikaj drugi raz" + nl + "6. Wygenerowany mnemonic pojawi się w dolnym okienku" + nl
               + "6. Przed rozpoczęciem klikania możesz wpisać 'coś' w pole salt" + nl + nl + "ps. Napiwki mile widziane :)");
         }
-        
+
         //2-9, 10 (Ten), walet, dama, król, as
         string[] karty = { "2", "3", "4", "5", "6", "7", "8", "9", "T", "J", "Q", "K", "A" };
 
@@ -35,7 +35,7 @@ namespace SeedGenerator
         int talia = 0;
         string nl = Environment.NewLine;
 
-        private void btStart_Click(object sender, EventArgs e)
+        private void BtStart_Click(object sender, EventArgs e)
         {
             btStart.Enabled = false;
             switch (ddIle.SelectedIndex)
@@ -61,7 +61,7 @@ namespace SeedGenerator
             panel1.Visible = true;
         }
 
-        void jeszcze(int ile)
+        private void Jeszcze(int ile)
         {
             MessageBox.Show("Potrzebuję kolejne " + ile + " kart." + nl + "Potasuj 'dobrze' i klikaj dalej.");
             //aktywujemy karty do klikania
@@ -71,7 +71,7 @@ namespace SeedGenerator
             }
         }
 
-        void dodajKarty()
+        private void DodajKarty()
         {
             for (int i = 0; i < kolory.Length; i++)
             {
@@ -80,18 +80,20 @@ namespace SeedGenerator
                 {
                     int x = 10 + j * 60;
                     string k = karty[j] + kolory[i];
-                    dodajKartę(k, x, y);
+                    DodajKartę(k, x, y);
                 }
             }
         }
 
-        void dodajKartę(string karta, int locX, int locY)
+        private void DodajKartę(string karta, int locX, int locY)
         {
-            Button b = new Button();
-            b.Name = karta;
-            b.Location = new Point(locX, locY);
-            b.Size = new Size(60, 100);
-            b.Click += new EventHandler(karta_Click);
+            Button b = new Button
+            {
+                Name = karta,
+                Location = new Point(locX, locY),
+                Size = new Size(60, 100)
+            };
+            b.Click += new EventHandler(Karta_Click);
             Bitmap i = null;
             switch (karta[1].ToString())
             {
@@ -121,7 +123,7 @@ namespace SeedGenerator
             panel1.Controls.Add(b);
         }
 
-        void karta_Click(object sender, EventArgs e)
+        private void Karta_Click(object sender, EventArgs e)
         {
             klikniete++;
             Control c = (Control)sender;
@@ -137,17 +139,17 @@ namespace SeedGenerator
                 talia++;
                 if (talia == 1)
                 {
-                    jeszcze(ileKart);
+                    Jeszcze(ileKart);
                 }
                 else
                 {
-                    liczSeed();
+                    LiczSeed();
                     MessageBox.Show("Gotowe! Mnemonic jest w boxsie :)");
                 }
             }
         }
 
-        void liczSeed()
+        void LiczSeed()
         {
             int[] b = { 128, 160, 192, 224, 256 };
             SHA512 s512 = SHA512.Create();
@@ -188,7 +190,7 @@ namespace SeedGenerator
             tbMnemonic.Text = mnemonic;//ta-da!
         }
 
-        private void btRestart_Click(object sender, EventArgs e)
+        private void BtRestart_Click(object sender, EventArgs e)
         {
             Application.Restart(); //serio, nie chciało mi się sprzątać XD
         }

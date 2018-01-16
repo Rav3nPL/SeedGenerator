@@ -61,7 +61,7 @@
             this.btStart.TabIndex = 1;
             this.btStart.Text = "Zaczynamy";
             this.btStart.UseVisualStyleBackColor = true;
-            this.btStart.Click += new System.EventHandler(this.btStart_Click);
+            this.btStart.Click += new System.EventHandler(this.BtStart_Click);
             // 
             // panel1
             // 
@@ -157,7 +157,7 @@
             this.btRestart.TabIndex = 12;
             this.btRestart.Text = "Restart";
             this.btRestart.UseVisualStyleBackColor = true;
-            this.btRestart.Click += new System.EventHandler(this.btRestart_Click);
+            this.btRestart.Click += new System.EventHandler(this.BtRestart_Click);
             // 
             // Form1
             // 
