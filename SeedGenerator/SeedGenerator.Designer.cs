@@ -46,18 +46,20 @@
             // lblInfo
             // 
             this.lblInfo.AutoSize = true;
-            this.lblInfo.Location = new System.Drawing.Point(0, 9);
+            this.lblInfo.Location = new System.Drawing.Point(0, 11);
+            this.lblInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblInfo.Name = "lblInfo";
-            this.lblInfo.Size = new System.Drawing.Size(447, 13);
+            this.lblInfo.Size = new System.Drawing.Size(593, 17);
             this.lblInfo.TabIndex = 0;
             this.lblInfo.Text = "Przygotuj talię 52 kart i potasuj ją co najmniej 7x metodą \"riffle shuffle\". Mnem" +
     "onic na ile słów:";
             // 
             // btStart
             // 
-            this.btStart.Location = new System.Drawing.Point(488, 4);
+            this.btStart.Location = new System.Drawing.Point(651, 5);
+            this.btStart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btStart.Name = "btStart";
-            this.btStart.Size = new System.Drawing.Size(75, 23);
+            this.btStart.Size = new System.Drawing.Size(100, 28);
             this.btStart.TabIndex = 1;
             this.btStart.Text = "Zaczynamy";
             this.btStart.UseVisualStyleBackColor = true;
@@ -65,73 +67,83 @@
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(12, 33);
+            this.panel1.Location = new System.Drawing.Point(16, 41);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(803, 437);
+            this.panel1.Size = new System.Drawing.Size(1071, 538);
             this.panel1.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 479);
+            this.label1.Location = new System.Drawing.Point(16, 590);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 13);
+            this.label1.Size = new System.Drawing.Size(64, 17);
             this.label1.TabIndex = 3;
             this.label1.Text = "entropia:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 505);
+            this.label2.Location = new System.Drawing.Point(16, 622);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(26, 13);
+            this.label2.Size = new System.Drawing.Size(34, 17);
             this.label2.TabIndex = 4;
             this.label2.Text = "salt:";
             // 
             // tbEnt
             // 
-            this.tbEnt.Location = new System.Drawing.Point(66, 476);
+            this.tbEnt.Location = new System.Drawing.Point(88, 586);
+            this.tbEnt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbEnt.Name = "tbEnt";
-            this.tbEnt.Size = new System.Drawing.Size(749, 20);
+            this.tbEnt.Size = new System.Drawing.Size(997, 22);
             this.tbEnt.TabIndex = 5;
             // 
             // tbSalt
             // 
-            this.tbSalt.Location = new System.Drawing.Point(66, 502);
+            this.tbSalt.Location = new System.Drawing.Point(88, 618);
+            this.tbSalt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbSalt.Name = "tbSalt";
-            this.tbSalt.Size = new System.Drawing.Size(749, 20);
+            this.tbSalt.Size = new System.Drawing.Size(997, 22);
             this.tbSalt.TabIndex = 6;
             // 
             // tbSeed
             // 
-            this.tbSeed.Location = new System.Drawing.Point(66, 528);
+            this.tbSeed.Location = new System.Drawing.Point(88, 650);
+            this.tbSeed.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbSeed.Name = "tbSeed";
-            this.tbSeed.Size = new System.Drawing.Size(749, 20);
+            this.tbSeed.Size = new System.Drawing.Size(997, 22);
             this.tbSeed.TabIndex = 7;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 531);
+            this.label3.Location = new System.Drawing.Point(16, 654);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(33, 13);
+            this.label3.Size = new System.Drawing.Size(43, 17);
             this.label3.TabIndex = 8;
             this.label3.Text = "seed:";
             // 
             // tbMnemonic
             // 
-            this.tbMnemonic.Location = new System.Drawing.Point(76, 554);
+            this.tbMnemonic.Location = new System.Drawing.Point(101, 682);
+            this.tbMnemonic.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbMnemonic.Multiline = true;
             this.tbMnemonic.Name = "tbMnemonic";
-            this.tbMnemonic.Size = new System.Drawing.Size(739, 54);
+            this.tbMnemonic.Size = new System.Drawing.Size(984, 66);
             this.tbMnemonic.TabIndex = 9;
+            this.tbMnemonic.Click += new System.EventHandler(this.TbMnemonic_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 557);
+            this.label4.Location = new System.Drawing.Point(16, 686);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 13);
+            this.label4.Size = new System.Drawing.Size(76, 17);
             this.label4.TabIndex = 10;
             this.label4.Text = "mnemonic:";
             // 
@@ -144,26 +156,28 @@
             "18",
             "21",
             "24"});
-            this.ddIle.Location = new System.Drawing.Point(445, 6);
+            this.ddIle.Location = new System.Drawing.Point(593, 7);
+            this.ddIle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ddIle.Name = "ddIle";
-            this.ddIle.Size = new System.Drawing.Size(37, 21);
+            this.ddIle.Size = new System.Drawing.Size(48, 24);
             this.ddIle.TabIndex = 11;
             // 
             // btRestart
             // 
-            this.btRestart.Location = new System.Drawing.Point(746, 6);
+            this.btRestart.Location = new System.Drawing.Point(995, 7);
+            this.btRestart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btRestart.Name = "btRestart";
-            this.btRestart.Size = new System.Drawing.Size(69, 23);
+            this.btRestart.Size = new System.Drawing.Size(92, 28);
             this.btRestart.TabIndex = 12;
             this.btRestart.Text = "Restart";
             this.btRestart.UseVisualStyleBackColor = true;
             this.btRestart.Click += new System.EventHandler(this.BtRestart_Click);
             // 
-            // Form1
+            // SeedGenerator
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(827, 620);
+            this.ClientSize = new System.Drawing.Size(1103, 763);
             this.Controls.Add(this.btRestart);
             this.Controls.Add(this.ddIle);
             this.Controls.Add(this.label4);
@@ -177,7 +191,8 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btStart);
             this.Controls.Add(this.lblInfo);
-            this.Name = "Form1";
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name = "SeedGenerator";
             this.Text = "rav3n_pl SeedGenerator";
             this.ResumeLayout(false);
             this.PerformLayout();
