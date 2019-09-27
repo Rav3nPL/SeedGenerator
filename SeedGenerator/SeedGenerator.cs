@@ -17,8 +17,9 @@ namespace SeedGenerator
         {
             InitializeComponent();
             ddIle.SelectedIndex = 4;
-            DodajKarty();
             panel1.Visible = false;
+            DodajKarty();
+            Icon = Properties.Resources.the_crow;
             MessageBox.Show("INSTRUKCJA\n\n" +
                 "1. Przygotuj talię 52 kart.\n" +
                 "2. Potasuj ją metodą 'riffle shiffle' co najmniej 7 razy\n" +
@@ -36,7 +37,7 @@ namespace SeedGenerator
         // Clubs=trefle, Diamonts=karo, Spades=piki, Hearts=kier
         readonly string[] kolory = { "C", "D", "S", "H" };
 
-        readonly Dictionary<char, Bitmap> bitmapy = new Dictionary<char, Bitmap>() {
+        readonly Dictionary<char, Image> bitmapy = new Dictionary<char, Image>() {
             { 'C', Properties.Resources.Suit_clubs_trefl},
             { 'D', Properties.Resources.Suit_diamonds_karo},
             { 'S', Properties.Resources.Suit_spades_pik},
@@ -50,7 +51,7 @@ namespace SeedGenerator
         private void BtStart_Click(object sender, EventArgs e)
         {
             btStart.Enabled = false;
-
+            ddIle.Enabled = false;
             ileKart = Convert.ToInt32(ddIle.GetItemText(ddIle.SelectedItem));
             if (ileKart == 24) { ileKart++; } // dopiero (52!/(52-25)!)^2 > 2^256
 
@@ -140,7 +141,6 @@ namespace SeedGenerator
             using (SHA512 s512 = SHA512.Create())
             using (SHA256 s256 = SHA256.Create())
             {
-
                 //bieżemy sha512 z textu entropii + salt -> mamy super-entropię w bajtach
                 byte[] dane = s512.ComputeHash(Encoding.ASCII.GetBytes(tbEnt.Text + tbSalt.Text));
 
@@ -183,10 +183,11 @@ namespace SeedGenerator
             Application.Restart(); //serio, nie chciało mi się sprzątać XD
         }
 
-        private void TbMnemonic_Click(object sender, EventArgs e)
+        private void CopyOn_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(tbMnemonic.Text);
-            MessageBox.Show("Mnemonic w schowku");
+            TextBox caller = (TextBox)sender;
+            Clipboard.SetText(caller.Text);
+            MessageBox.Show("Skopiowane do schowka");
         }
     }
 }

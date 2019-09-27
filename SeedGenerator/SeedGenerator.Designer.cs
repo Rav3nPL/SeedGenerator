@@ -46,18 +46,19 @@
             // lblInfo
             // 
             this.lblInfo.AutoSize = true;
-            this.lblInfo.Location = new System.Drawing.Point(0, 11);
+            this.lblInfo.Location = new System.Drawing.Point(16, 13);
             this.lblInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblInfo.Name = "lblInfo";
             this.lblInfo.Size = new System.Drawing.Size(593, 17);
             this.lblInfo.TabIndex = 0;
             this.lblInfo.Text = "Przygotuj talię 52 kart i potasuj ją co najmniej 7x metodą \"riffle shuffle\". Mnem" +
     "onic na ile słów:";
+            this.lblInfo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // btStart
             // 
-            this.btStart.Location = new System.Drawing.Point(651, 5);
-            this.btStart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btStart.Location = new System.Drawing.Point(670, 7);
+            this.btStart.Margin = new System.Windows.Forms.Padding(4);
             this.btStart.Name = "btStart";
             this.btStart.Size = new System.Drawing.Size(100, 28);
             this.btStart.TabIndex = 1;
@@ -68,7 +69,7 @@
             // panel1
             // 
             this.panel1.Location = new System.Drawing.Point(16, 41);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1071, 538);
             this.panel1.TabIndex = 2;
@@ -96,26 +97,29 @@
             // tbEnt
             // 
             this.tbEnt.Location = new System.Drawing.Point(88, 586);
-            this.tbEnt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbEnt.Margin = new System.Windows.Forms.Padding(4);
             this.tbEnt.Name = "tbEnt";
             this.tbEnt.Size = new System.Drawing.Size(997, 22);
             this.tbEnt.TabIndex = 5;
+            this.tbEnt.Click += new System.EventHandler(this.CopyOn_Click);
             // 
             // tbSalt
             // 
             this.tbSalt.Location = new System.Drawing.Point(88, 618);
-            this.tbSalt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbSalt.Margin = new System.Windows.Forms.Padding(4);
             this.tbSalt.Name = "tbSalt";
             this.tbSalt.Size = new System.Drawing.Size(997, 22);
             this.tbSalt.TabIndex = 6;
+            this.tbSalt.Click += new System.EventHandler(this.CopyOn_Click);
             // 
             // tbSeed
             // 
             this.tbSeed.Location = new System.Drawing.Point(88, 650);
-            this.tbSeed.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbSeed.Margin = new System.Windows.Forms.Padding(4);
             this.tbSeed.Name = "tbSeed";
             this.tbSeed.Size = new System.Drawing.Size(997, 22);
             this.tbSeed.TabIndex = 7;
+            this.tbSeed.Click += new System.EventHandler(this.CopyOn_Click);
             // 
             // label3
             // 
@@ -130,12 +134,12 @@
             // tbMnemonic
             // 
             this.tbMnemonic.Location = new System.Drawing.Point(101, 682);
-            this.tbMnemonic.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbMnemonic.Margin = new System.Windows.Forms.Padding(4);
             this.tbMnemonic.Multiline = true;
             this.tbMnemonic.Name = "tbMnemonic";
             this.tbMnemonic.Size = new System.Drawing.Size(984, 66);
             this.tbMnemonic.TabIndex = 9;
-            this.tbMnemonic.Click += new System.EventHandler(this.TbMnemonic_Click);
+            this.tbMnemonic.Click += new System.EventHandler(this.CopyOn_Click);
             // 
             // label4
             // 
@@ -156,8 +160,8 @@
             "18",
             "21",
             "24"});
-            this.ddIle.Location = new System.Drawing.Point(593, 7);
-            this.ddIle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ddIle.Location = new System.Drawing.Point(614, 9);
+            this.ddIle.Margin = new System.Windows.Forms.Padding(4);
             this.ddIle.Name = "ddIle";
             this.ddIle.Size = new System.Drawing.Size(48, 24);
             this.ddIle.TabIndex = 11;
@@ -165,7 +169,7 @@
             // btRestart
             // 
             this.btRestart.Location = new System.Drawing.Point(995, 7);
-            this.btRestart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btRestart.Margin = new System.Windows.Forms.Padding(4);
             this.btRestart.Name = "btRestart";
             this.btRestart.Size = new System.Drawing.Size(92, 28);
             this.btRestart.TabIndex = 12;
@@ -178,8 +182,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1103, 763);
-            this.Controls.Add(this.btRestart);
+            this.Controls.Add(this.btStart);
             this.Controls.Add(this.ddIle);
+            this.Controls.Add(this.lblInfo);
+            this.Controls.Add(this.btRestart);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tbMnemonic);
             this.Controls.Add(this.label3);
@@ -189,9 +195,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btStart);
-            this.Controls.Add(this.lblInfo);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "SeedGenerator";
             this.Text = "rav3n_pl SeedGenerator";
             this.ResumeLayout(false);
